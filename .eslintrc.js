@@ -14,5 +14,6 @@ module.exports = {
   plugins: ["react"],
   rules: {
     quotes: ["error", "double"],
+    "react/jsx-props-no-spreading": "off",
   },
 };

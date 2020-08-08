@@ -1,29 +1,39 @@
-import { Link } from 'react-scroll';
-import styled from 'styled-components';
-import { flexbox, space, layout, color, position, typography, shadow } from 'styled-system';
+import { Link } from "react-scroll";
+import styled from "styled-components";
+import {
+  color,
+  flexbox,
+  layout,
+  position,
+  shadow,
+  space,
+  typography,
+} from "styled-system";
 
 export const ScrollLink = styled(Link)`
-	cursor: pointer;
-  ${flexbox}
-  ${space}
-  ${layout}
+  cursor: pointer;
+
   ${color}
+  ${flexbox}
+  ${layout}
   ${position}
+  ${shadow}
+  ${space}  
   ${typography}
-  ${shadow}  
 `;
 
 export default styled.a`
-	${flexbox}
-  ${space}
-  ${layout}
   ${color}
+  ${flexbox}
+  ${layout}
   ${position}
-  ${typography}
   ${shadow}  
-	text-decoration: none;
+  ${space}
+  ${typography}
+ 
+  text-decoration: none;
 
-	&:hover {
-		text-decoration: underline;
-	}
+  &:hover {
+     text-decoration: underline;
+  }
 `;
