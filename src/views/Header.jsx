@@ -11,10 +11,7 @@ const OFFSET = -125;
 
 const LinkText = styled(Text)``;
 
-const scrollToTop = () =>
-  animateScroll.scrollToTop({
-    duration: 150,
-  });
+const scrollToTop = () => animateScroll.scrollToTop({ duration: 150 });
 
 const Header = () => (
   <Box
@@ -25,8 +22,8 @@ const Header = () => (
     justifyContent="space-between"
     backgroundColor="white"
     boxShadow="2px 4px 4px rgba(205, 205, 205, 0.75)"
-    pt={[1, 1, 2, 2]}
-    pb={[1, 1, 2, 2]}
+    pt={[3, 3, 4, 4]}
+    pb={[3, 3, 4, 4]}
     fontSize={[1]}
   >
     <Box onClick={scrollToTop} pl={3}>

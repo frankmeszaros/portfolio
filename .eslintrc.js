@@ -14,14 +14,5 @@ module.exports = {
   plugins: ["react"],
   rules: {
     quotes: ["error", "double"],
-    "object-curly-newline": [
-      "error",
-      {
-        ObjectExpression: "always",
-        ObjectPattern: { multiline: true },
-        ImportDeclaration: "never",
-        ExportDeclaration: { multiline: true, minProperties: 3 },
-      },
-    ],
   },
 };
