@@ -16,6 +16,7 @@ const scrollToTop = () => animateScroll.scrollToTop({ duration: 150 });
 const Header = () => {
   const scrollProps = {
     activeClass: "active",
+
     spy: true,
     smooth: true,
     offset: OFFSET,

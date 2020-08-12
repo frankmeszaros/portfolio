@@ -1,6 +1,7 @@
 import { Link } from "react-scroll";
 import styled from "styled-components";
 import {
+  background,
   color,
   flexbox,
   layout,
@@ -12,7 +13,8 @@ import {
 
 export const ScrollLink = styled(Link)`
   cursor: pointer;
-
+  
+  ${background}
   ${color}
   ${flexbox}
   ${layout}
@@ -20,6 +22,12 @@ export const ScrollLink = styled(Link)`
   ${shadow}
   ${space}  
   ${typography}
+
+   transition: background-size 0.25s ease-in;
+
+   &:hover {
+      background-size: 100% 88%;
+   }
 `;
 
 export default styled.a`
