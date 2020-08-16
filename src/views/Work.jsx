@@ -66,6 +66,7 @@ const PublicProjects = () => {
   const { id, name, login, repositories } = user || {};
   const { edges = [] } = repositories || {};
   console.log(edges);
+
   return loading ? (
     "Loading"
   ) : (
