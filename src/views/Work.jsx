@@ -1,71 +1,22 @@
 import React from "react";
-import {
-  ApolloClient,
-  ApolloProvider,
-  InMemoryCache,
-  createHttpLink,
-  useQuery,
-  gql,
-} from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
+import { ApolloProvider, useQuery } from "@apollo/client";
 
 import Box from "../components/Box";
 import Card from "../components/Card";
 import Text from "../components/Text";
 
-const GITHUB_URI = "https://api.github.com/graphql";
-
-const httpLink = createHttpLink({ uri: GITHUB_URI });
-
-const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
-  const token = process.env.REACT_APP_GITHUB_TOKEN;
-  // return the headers to the context so httpLink can read them
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : "",
-    },
-  };
-});
-
-const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-});
-
-const GET_USER_REPOS = gql`
-  query {
-    user(login: "frankmeszaros") {
-      id
-      name
-      login
-      email
-      repositories(last: 10, privacy: PUBLIC, isFork: false) {
-        edges {
-          node {
-            id
-            name
-            isPrivate
-            createdAt
-            updatedAt
-            url
-            stargazers(first: 1) {
-              totalCount
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+import client from "../graphql/client";
+import { GET_USER_REPOS } from "../graphql/queries";
 
 const PublicProjects = () => {
-  const { loading, data } = useQuery(GET_USER_REPOS);
+  const { loading, data, errors } = useQuery(GET_USER_REPOS, { variables: {} });
+
   const { user = {} } = data || {};
   const { id, name, login, repositories } = user || {};
   const { edges = [] } = repositories || {};
-  console.log(edges);
+
+  if (edges) console.log(edges);
+  if (errors) console.log(errors);
 
   return loading ? (
     "Loading"
@@ -75,10 +26,21 @@ const PublicProjects = () => {
         Experience
       </Text>
       {edges.map(({ node }) => (
-        <Box key={node.id}>
-          <a href={node.url} target="_blank" rel="noreferrer">
-            {node.name}
-          </a>
+        <Box key={node.id} display="flex">
+          <Box flex={1}>
+            <a href={node.url} target="_blank" rel="noopener noreferrer">
+              {node.name}
+            </a>
+          </Box>
+          <Box flex={1}>
+            <Text flex={1}>{node.isTemplate ? "Template" : "Project"}</Text>
+          </Box>
+          <Box flex={2} display="flex" justifyContent="space-between">
+            <Text>{node.stargazers?.totalCount} stars</Text>
+            <Text flex={1}>
+              {node.description || "No description provided."}
+            </Text>
+          </Box>
         </Box>
       ))}
     </Box>
