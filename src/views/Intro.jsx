@@ -12,18 +12,19 @@ const Intro = () => (
     pr={[5, 6, 7]}
   >
     <Box display="flex" flexDirection="column" justifyContent="center">
-      <Text fontSize={[3, 4, 5]} color="darkGray">
+      <Text fontSize={[2, 3, 4]} color="darkGray">
         Hi, my name is
       </Text>
       <Text fontSize={[4, 5, 6]} fontWeight="bold">
-        frank meszaros
+        Frank Meszaros.
       </Text>
-      <Text fontSize={[3, 4, 5, 6]} color="darkGray">
-        I like to build software that people enjoy using (usually for the web)
+      <Text fontSize={[2, 3, 4]} color="darkGray">
+        I like to build software that people enjoy using (usually for the web).
       </Text>
-      <Text pt={2} color="dimGray">
+      <Text mt={4} pt={2} color="dimGray">
         I&apos;m a software engineer based out of Columbus, OH. Currently, I
-        spend a lot of time building data-driven web applications and APIs.
+        spend a lot of time building data-driven web applications, APIs, and
+        occasionally some data engineering.
       </Text>
     </Box>
   </Box>

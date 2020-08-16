@@ -33,8 +33,8 @@ const Header = () => {
       justifyContent="space-between"
       backgroundColor="white"
       boxShadow="2px 4px 4px rgba(205, 205, 205, 0.75)"
-      pt={[3, 3, 4, 4]}
-      pb={[3, 3, 4, 4]}
+      pt={[2, 3, 3]}
+      pb={[2, 3, 3]}
       fontSize={[1]}
     >
       <Box onClick={scrollToTop} pl={3}>
