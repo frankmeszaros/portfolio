@@ -1,18 +1,48 @@
 import React from "react";
+import ReactTooltip from "react-tooltip";
 
 import Box from "../components/Box";
+import Link from "../components/Link";
+import Text from "../components/Text";
+
+import Github from "../icons/github";
+import LinkedIn from "../icons/linkedin";
+
+const PROFILES = {
+  linkedin: {
+    icon: <LinkedIn />,
+    uri: "https://linkedin.com/in/frankwmeszaros",
+    tooltip: "View LinkedIn profile",
+  },
+  github: {
+    icon: <Github />,
+    uri: "https://github.com/frankmeszaros",
+    tooltip: "View Github profile",
+  },
+};
 
 const Footer = () => (
   <Box
-    position="relative"
-    left="0"
+    bg="white"
     bottom="0"
-    width="100%"
-    textAlign="center"
+    boxShadow="4px 6px 8px 8px rgba(205, 205, 205, 0.75)"
+    display="flex"
+    fontSize={1}
+    justifyContent="center"
+    left="0"
     pt={2}
     pb={2}
+    position="fixed"
+    width="100vw"
   >
-    <p>Designed &amp; Built by Frank Meszaros</p>
+    <Box display="flex" justifyContent="space-between" width="4vw">
+      {Object.keys(PROFILES).map((profile) => (
+        <Text data-tip={PROFILES[profile].tooltip} key={profile}>
+          <Link href={PROFILES[profile].uri}>{PROFILES[profile].icon}</Link>
+        </Text>
+      ))}
+    </Box>
+    <ReactTooltip />
   </Box>
 );
 

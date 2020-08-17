@@ -5,15 +5,21 @@ import Text from "./Text";
 
 const Card = ({
   title = "Example title",
-  subtitle = "This would go underneath the title",
-  description = "This is where the longer description would go if one exists",
+  subtitle = "",
+  description = "",
+  ...props
 }: {
   title: string;
   subtitle: string;
   description: string;
 }) => (
-  <Box>
-    <Text>{title}</Text>
+  <Box
+    p={4}
+    borderRadius={4}
+    boxShadow="2px 2px 4px rgba(205, 205, 205, 0.75)"
+    {...props}
+  >
+    <Text fontWeight="bold">{title}</Text>
     <Text>{subtitle}</Text>
     <Text>{description}</Text>
   </Box>

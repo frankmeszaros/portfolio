@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import Badge from "../components/Badge";
 import Box from "../components/Box";
 import Selector from "../components/Selector.tsx";
 import Text from "../components/Text";
@@ -15,7 +16,7 @@ const Experience = () => {
   };
 
   return (
-    <Box id="experience" pl={[4, 5, 6, 7]} pr={[4, 5, 6, 7]}>
+    <Box id="experience" pl={[4, 5, 6, 7]} pr={[4, 5, 6, 7]} height="100vh">
       <Text fontSize={[4, 5, 6]} textAlign="center">
         Experience
       </Text>
@@ -36,6 +37,8 @@ const Experience = () => {
               p={4}
               borderRadius={4}
               boxShadow="2px 2px 4px rgba(205, 205, 205, 0.75)"
+              minWidth="50vw"
+              maxWidth="50vw"
             >
               <Text fontWeight="bold">{role.title}</Text>
               <Text>
@@ -51,19 +54,7 @@ const Experience = () => {
               <Text fontWeight="bold">Technologies I worked with</Text>
               <Box display="flex">
                 {role.technologies.map((tech) => (
-                  <Box
-                    key={tech}
-                    borderRadius={8}
-                    backgroundColor="gray"
-                    color="white"
-                    p={1}
-                    pl={2}
-                    pr={2}
-                    mr={2}
-                    display="flex"
-                  >
-                    <Text>{tech}</Text>
-                  </Box>
+                  <Badge key={`${role.title}-${tech}`} label={tech} mr={1} />
                 ))}
               </Box>
             </Box>

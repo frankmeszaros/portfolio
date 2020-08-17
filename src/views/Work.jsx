@@ -12,37 +12,39 @@ const PublicProjects = () => {
   const { loading, data, errors } = useQuery(GET_USER_REPOS, { variables: {} });
 
   const { user = {} } = data || {};
-  const { id, name, login, repositories } = user || {};
+  const { repositories } = user || {};
   const { edges = [] } = repositories || {};
 
   if (edges) console.log(edges);
   if (errors) console.log(errors);
 
-  return loading ? (
-    "Loading"
-  ) : (
-    <Box id="work" p={[3, 4, 5]}>
-      <Text fontSize={[4, 5, 6]} textAlign="left">
-        Experience
-      </Text>
-      {edges.map(({ node }) => (
-        <Box key={node.id} display="flex">
-          <Box flex={1}>
-            <a href={node.url} target="_blank" rel="noopener noreferrer">
-              {node.name}
-            </a>
+  return (
+    <Box height="100vh">
+      {loading ? (
+        "Loading"
+      ) : (
+        <Box id="work" p={[3, 4, 5]}>
+          <Text fontSize={[4, 5, 6]} textAlign="left">
+            Work
+          </Text>
+          <Box display="grid" gridTemplateColumns="auto auto auto">
+            {edges.map(({ node }) => (
+              <Card
+                key={node.id}
+                title={node.name}
+                description={node.description}
+                mt={2}
+                mr={2}
+                minHeight="20vh"
+                maxHeight="20vh"
+                minWidth="25vw"
+                maxWidth="25vw"
+              />
+            ))}
           </Box>
-          <Box flex={1}>
-            <Text flex={1}>{node.isTemplate ? "Template" : "Project"}</Text>
-          </Box>
-          <Box flex={2} display="flex" justifyContent="space-between">
-            <Text>{node.stargazers?.totalCount} stars</Text>
-            <Text flex={1}>
-              {node.description || "No description provided."}
-            </Text>
-          </Box>
+          <Box></Box>
         </Box>
-      ))}
+      )}
     </Box>
   );
 };

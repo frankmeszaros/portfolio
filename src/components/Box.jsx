@@ -9,11 +9,13 @@ import {
   typography,
   shadow,
   variant,
+  grid,
 } from "styled-system";
 
 const Box = styled.div`
   ${border}
   ${flexbox}
+  ${grid}
   ${space}
   ${layout}
   ${color}
