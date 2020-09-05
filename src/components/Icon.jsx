@@ -18,7 +18,7 @@ const Icon = styled.i`
   ${color}
   ${position}
   ${typography}
-  ${shadow}  
+  ${shadow}
 `;
 
 export default Icon;

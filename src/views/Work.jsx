@@ -22,11 +22,8 @@ const PublicProjects = () => {
   const { repositories } = user || {};
   const { edges = [] } = repositories || {};
 
-  if (edges) console.log(edges);
-  if (errors) console.log(errors);
-
   return (
-    <Box>
+    <Box minHeight="80vh">
       {loading ? (
         "Loading"
       ) : (
@@ -40,7 +37,7 @@ const PublicProjects = () => {
                 boxShadow="2px 2px 4px rgba(205, 205, 205, 0.75)"
                 m={2}
                 p={4}
-                minHeight="20vh"
+                minHeight="15vh"
                 key={node.id}
                 display="flex"
                 flexDirection="column"
@@ -50,22 +47,27 @@ const PublicProjects = () => {
                 <TitleLink href={node.url} fontSize={28}>
                   {node.name}
                 </TitleLink>
-                <Text fontSize={[1]} color="darkGray">
+                <Text fontSize={[1]} color="darkGray" mt={2}>
                   {node.description}
                 </Text>
-
-                <Box display="flex" justifyContent="flex-start">
-                  {(node.languages?.edges || []).map(({ node }) => (
-                    <Box key={node.id} mr={2}>
-                      <Text>{node.name}</Text>
+                <Box display="flex" justifyContent="space-between" mt={4}>
+                  <Box display="flex" justifyContent="flex-start">
+                    {(node.languages?.edges || []).map(({ node }) => (
+                      <Box key={node.id} mr={2}>
+                        <Badge backgroundColor={node.color} label={node.name} />
+                      </Box>
+                    ))}
+                  </Box>
+                  <Box>
+                    <Box display="flex" justifyContent="flex-end">
+                      <Text ml={2}>
+                        &#11088; Stars: {node.stargazers.totalCount}
+                      </Text>
+                      <Text ml={2}>
+                        👀 Watchers: {node.watchers.totalCount}
+                      </Text>
                     </Box>
-                  ))}
-                </Box>
-                <Box display="flex" justifyContent="flex-end">
-                  <Text ml={2}>
-                    &#11088; Stars: {node.stargazers.totalCount}
-                  </Text>
-                  <Text ml={2}>👀 Watchers: {node.watchers.totalCount}</Text>
+                  </Box>
                 </Box>
               </Box>
             ))}

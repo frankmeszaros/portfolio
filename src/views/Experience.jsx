@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 import Badge from "../components/Badge";
 import Box from "../components/Box";
@@ -16,7 +17,7 @@ const Experience = () => {
   };
 
   return (
-    <Box id="experience" pl={[4, 5, 6, 7]} pr={[4, 5, 6, 7]} minHeight="85vh">
+    <Box id="experience" pl={[4, 5, 6, 7]} pr={[4, 5, 6, 7]} minHeight="90vh">
       <Text fontSize={[4, 5, 6]} textAlign="center">
         Experience
       </Text>
@@ -40,22 +41,35 @@ const Experience = () => {
               minWidth="50vw"
               maxWidth="50vw"
             >
-              <Text fontWeight="bold">{role.title}</Text>
-              <Text>
-                {role.from} - {role.to ? role.to : "Present"}
-              </Text>
-
-              <ul>
+              <Box display="flex" justifyContent="space-between">
+                <Text fontWeight="bold" fontSize={[3, 4]}>
+                  {role.title}
+                </Text>
+                <Text my={2} mx={2} color="darkGray" fontWeight="semibold">
+                  {role.from} - {role.to ? role.to : "Present"}
+                </Text>
+              </Box>
+              <Box my={3}>
                 {role.responsibilites.map((responsibility) => (
-                  <li key={responsibility}>{responsibility}</li>
+                  <Box key={responsibility} display="flex">
+                    <Box mr={2}>➡️</Box>
+                    <Box>{responsibility}</Box>
+                  </Box>
                 ))}
-              </ul>
-
-              <Text fontWeight="bold">Technologies I worked with</Text>
-              <Box display="flex">
-                {role.technologies.map((tech) => (
-                  <Badge key={`${role.title}-${tech}`} label={tech} mr={1} />
-                ))}
+              </Box>
+              <Box mt={2}>
+                <Text fontWeight="bold">Technologies I worked with</Text>
+                <Box display="flex">
+                  {role.technologies.map((tech) => (
+                    <Badge
+                      px={3}
+                      py={1}
+                      key={`${role.title}-${tech}`}
+                      label={tech}
+                      mr={2}
+                    />
+                  ))}
+                </Box>
               </Box>
             </Box>
           ))}
