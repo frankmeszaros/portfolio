@@ -28,14 +28,15 @@ const Header = () => {
     <Box
       position="fixed"
       width="100vw"
+      top="0px"
+      pt={2}
+      pb={2}
       display="flex"
       flexDirection="row"
       justifyContent="space-between"
       backgroundColor="black"
       color="white"
       boxShadow="2px 4px 4px rgba(205, 205, 205, 0.75)"
-      pt={[2, 3, 3]}
-      pb={[2, 3, 3]}
       fontSize={[1]}
     >
       <Box onClick={scrollToTop} pl={3}>

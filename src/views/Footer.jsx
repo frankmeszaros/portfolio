@@ -12,12 +12,12 @@ const PROFILES = {
   linkedin: {
     icon: <LinkedIn />,
     uri: "https://linkedin.com/in/frankwmeszaros",
-    tooltip: "View LinkedIn profile",
+    tooltip: "LinkedIn",
   },
   github: {
     icon: <Github />,
     uri: "https://github.com/frankmeszaros",
-    tooltip: "View Github profile",
+    tooltip: "Github",
   },
 };
 
@@ -33,6 +33,7 @@ const Footer = () => (
     pt={2}
     pb={2}
     position="fixed"
+    height="5vh"
     width="100vw"
   >
     <Box display="flex" justifyContent="space-between" width="4vw">

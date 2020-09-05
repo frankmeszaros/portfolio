@@ -2,16 +2,16 @@ import React from "react";
 
 import Text from "./Text";
 
-type BadgeProps = {
-  label: string;
+// type BadgeProps = {
+//   label: string;
 
-  backgroundColor?: string;
-  borderRadius?: number;
-  color?: string;
-  p?: number;
-};
+//   backgroundColor?: string;
+//   borderRadius?: number;
+//   color?: string;
+//   p?: number;
+// };
 
-const Badge = ({ borderRadius, p, label, ...props }: BadgeProps) => (
+const Badge = ({ borderRadius, p, label, ...props }) => (
   <Text borderRadius={borderRadius} p={p} {...props}>
     {label}
   </Text>

@@ -18,11 +18,17 @@ export const GET_USER_REPOS = gql`
             createdAt
             updatedAt
             url
+            homepageUrl
             owner {
               id
               login
             }
-            languages(first: 10) {
+            primaryLanguage {
+              color
+              id
+              name
+            }
+            languages(first: 3) {
               totalCount
               totalSize
 
@@ -36,6 +42,9 @@ export const GET_USER_REPOS = gql`
               }
             }
             stargazers(first: 1) {
+              totalCount
+            }
+            watchers(first: 0) {
               totalCount
             }
           }

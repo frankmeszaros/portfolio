@@ -1,15 +1,15 @@
 import React from "react";
 import Box from "./Box";
 
-const capitalize = (str: string) =>
+const capitalize = (str) =>
   str && str.length > 0 ? `${str.charAt(0).toUpperCase()}${str.slice(1)}` : "";
 
-type SectionProps = {
-  title: string;
-  children: any;
-};
+// type SectionProps = {
+//   title: string;
+//   children: any;
+// };
 
-const Section = ({ title, children }: SectionProps) => (
+const Section = ({ title, children }) => (
   <>
     <Box
       id={title}

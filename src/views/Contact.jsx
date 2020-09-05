@@ -7,7 +7,7 @@ import Text from "../components/Text";
 const EMAIL = "frankwmeszaros@gmail.com";
 
 const Contact = () => (
-  <Box height="100vh" id="contact" p={[3, 4, 5]}>
+  <Box id="contact" p={[3, 4, 5]}>
     <Text fontSize={[4, 5, 6]}>Let&apos;s get in touch</Text>
     <Text fontSize={[2, 3, 4]}>
       I&apos;m currently not exploring new opportunities, but I&apos;m always

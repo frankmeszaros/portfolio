@@ -3,22 +3,22 @@ import React from "react";
 import Box from "./Box";
 import Text from "./Text";
 
-type Item = {
-  id: string;
-  name: any;
-  description: string;
-};
+// type Item = {
+//   id: string;
+//   name: any;
+//   description: string;
+// };
 
-type SelectorProps = {
-  handleSelect?: any;
-  items: Array<Item>;
-  selected: Item | null;
-};
+// type SelectorProps = {
+//   handleSelect?: any;
+//   items: Array<Item>;
+//   selected: Item | null;
+// };
 
-const isSelected = (item: Item, selected: Item | null): boolean =>
+const isSelected = (item, selected) =>
   !!selected && item.name === selected.name;
 
-const Selector = ({ handleSelect, items, selected }: SelectorProps) => (
+const Selector = ({ handleSelect, items, selected }) => (
   <Box display="flex" flexDirection="column">
     {(items || []).map((item) => (
       <Box
@@ -40,7 +40,7 @@ const Selector = ({ handleSelect, items, selected }: SelectorProps) => (
 );
 
 Selector.defaultProps = {
-  handleSelect: (item: Item) => {},
+  handleSelect: (item) => {},
 };
 
 export default Selector;

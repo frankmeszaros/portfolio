@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Badge from "../components/Badge";
 import Box from "../components/Box";
-import Selector from "../components/Selector.tsx";
+import Selector from "../components/Selector";
 import Text from "../components/Text";
 
 import workExperience from "../data/experience";
@@ -16,7 +16,7 @@ const Experience = () => {
   };
 
   return (
-    <Box id="experience" pl={[4, 5, 6, 7]} pr={[4, 5, 6, 7]} height="100vh">
+    <Box id="experience" pl={[4, 5, 6, 7]} pr={[4, 5, 6, 7]} minHeight="85vh">
       <Text fontSize={[4, 5, 6]} textAlign="center">
         Experience
       </Text>

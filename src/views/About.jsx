@@ -4,8 +4,16 @@ import Box from "../components/Box";
 import Link from "../components/Link";
 import Text from "../components/Text";
 
+import Aws from "../icons/aws";
+import Django from "../icons/django";
+import Express from "../icons/express";
+import Github from "../icons/github";
+import Python from "../icons/python";
+
+const ICON_SIZE = "5em";
+
 const About = () => (
-  <Box id="about" height="100vh" p={[3, 4, 5]}>
+  <Box id="about" p={[3, 4, 5]} minHeight="75vh">
     <Text fontSize={[4, 5, 6]}>About</Text>
     <Text fontSize={[2, 3, 4]}>
       Hey, I&apos;m Frank! I am a software (currently) based out of Ohio. I love
@@ -21,23 +29,13 @@ const About = () => (
     </Text>
 
     <Text>Recently, I&apos;ve been working with:</Text>
-    <ul>
-      <li>Node.JS</li>
-      <ul>
-        <li>React</li>
-        <li>Express.JS</li>
-        <li>Apollo GraphQL</li>
-      </ul>
-
-      <li>Python</li>
-      <ul>
-        <li>Django</li>
-        <li>Graphene (Python GraphQL framework)</li>
-        <li>PySpark</li>
-      </ul>
-
-      <li>Dockerizing things</li>
-    </ul>
+    <Box display="flex" justifyContent="space-between">
+      <Aws fontSize={ICON_SIZE} />
+      <Django fontSize={ICON_SIZE} />
+      <Express fontSize={ICON_SIZE} />
+      <Github fontSize={ICON_SIZE} />
+      <Python fontSize={ICON_SIZE} />
+    </Box>
   </Box>
 );
 
