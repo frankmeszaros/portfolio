@@ -15,12 +15,12 @@ const Experience = () => {
   };
 
   return (
-    <Box id="experience" px={[1, 2, 3]} minHeight="90vh">
+    <Box id="experience" px={[1, 2, 3]} minHeight="90vh" mt={[1, 2]}>
       <Text fontSize={[4, 5, 6]} textAlign="center">
         Experience
       </Text>
 
-      <Box display="flex">
+      <Box display="flex" justifyContent="center">
         <Box minWidth={["50px", "150px"]}>
           <Selector
             items={workExperience}

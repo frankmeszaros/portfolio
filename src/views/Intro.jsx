@@ -4,14 +4,7 @@ import Box from "../components/Box";
 import Text from "../components/Text";
 
 const Intro = () => (
-  <Box
-    display="flex"
-    justifyContent="center"
-    pt={[4, 5, 6]}
-    pl={[5, 6, 7]}
-    pr={[5, 6, 7]}
-    minHeight="75vh"
-  >
+  <Box display="flex" justifyContent="center" minHeight="75vh">
     <Box display="flex" flexDirection="column" justifyContent="center">
       <Text fontSize={[2, 3, 4]} color="darkGray">
         Hi, my name is
