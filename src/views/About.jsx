@@ -16,7 +16,7 @@ import Python from "../icons/python";
 const ICON_SIZE = "5em";
 
 const About = () => (
-  <Box id="about" p={[1, 2, 3]} minHeight="75vh">
+  <Box id="about" p={[1, 2, 3]} minHeight="100vh">
     <Box px={[2, 3]}>
       <Text fontSize={[4, 5, 6]}>About</Text>
       <Box display="flex" justifyContent="center">
