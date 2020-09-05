@@ -16,7 +16,7 @@ const TitleLink = styled(Link)`
 `;
 
 const PublicProjects = () => {
-  const { loading, data, errors } = useQuery(GET_USER_REPOS, { variables: {} });
+  const { loading, data } = useQuery(GET_USER_REPOS, { variables: {} });
 
   const { user = {} } = data || {};
   const { repositories } = user || {};
@@ -61,10 +61,12 @@ const PublicProjects = () => {
                   <Box>
                     <Box display="flex" justifyContent="flex-end">
                       <Text ml={2}>
-                        &#11088; Stars: {node.stargazers.totalCount}
+                        <span role="img">&#11088;</span> Stars:{" "}
+                        {node.stargazers.totalCount}
                       </Text>
                       <Text ml={2}>
-                        👀 Watchers: {node.watchers.totalCount}
+                        <span role="img">👀</span> Watchers:{" "}
+                        {node.watchers.totalCount}
                       </Text>
                     </Box>
                   </Box>

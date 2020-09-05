@@ -31,7 +31,6 @@ const Footer = () => (
     justifyContent="center"
     left="0"
     pt={2}
-    pb={2}
     position="fixed"
     height="5vh"
     width="100vw"
