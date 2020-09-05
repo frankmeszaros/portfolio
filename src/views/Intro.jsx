@@ -4,7 +4,7 @@ import Box from "../components/Box";
 import Text from "../components/Text";
 
 const Intro = () => (
-  <Box display="flex" justifyContent="center" minHeight="75vh">
+  <Box display="flex" justifyContent="center" minHeight="100vh">
     <Box display="flex" flexDirection="column" justifyContent="center">
       <Text fontSize={[2, 3, 4]} color="darkGray">
         Hi, my name is

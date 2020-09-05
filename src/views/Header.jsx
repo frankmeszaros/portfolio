@@ -7,7 +7,7 @@ import { ScrollLink } from "../components/Link";
 import Text from "../components/Text";
 
 const DURATION = 150;
-const OFFSET = -125;
+const OFFSET = -38;
 
 const LinkText = styled(Text)``;
 

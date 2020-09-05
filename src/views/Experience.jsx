@@ -38,6 +38,8 @@ const Experience = () => {
               boxShadow="2px 2px 4px rgba(205, 205, 205, 0.75)"
               minWidth="50vw"
               maxWidth="50vw"
+              backgroundColor="white"
+              my={2}
             >
               <Box display="flex" justifyContent="space-between">
                 <Text fontWeight="bold" fontSize={[2, 3, 4]}>

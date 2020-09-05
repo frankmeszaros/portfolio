@@ -27,7 +27,7 @@ const PublicProjects = () => {
       {loading ? (
         "Loading"
       ) : (
-        <Box id="work" p={[3, 4, 5]}>
+        <Box id="work" p={[2, 3, 4]}>
           <Text fontSize={[4, 5, 6]} textAlign="left">
             Work
           </Text>
@@ -42,17 +42,30 @@ const PublicProjects = () => {
                 <Box
                   boxShadow="2px 2px 4px rgba(205, 205, 205, 0.75)"
                   m={[1, 2, 3, 4]}
-                  p={[2, 3, 4]}
+                  p={[2, 3]}
                   minHeight="15vh"
                   key={node.id}
                   display="flex"
                   flexDirection="column"
                   justifyContent="space-between"
                   borderRadius={5}
+                  backgroundColor="white"
                 >
                   <TitleLink href={node.url} fontSize={[18, 24, 28]}>
                     {node.name}
                   </TitleLink>
+                  <Box>
+                    <Box display="flex" justifyContent="flex-start" mt={[1, 2]}>
+                      <Text>
+                        <span role="img">&#11088;</span> Stars:{" "}
+                        {node.stargazers.totalCount}
+                      </Text>
+                      <Text ml={2}>
+                        <span role="img">👀</span> Watchers:{" "}
+                        {node.watchers.totalCount}
+                      </Text>
+                    </Box>
+                  </Box>
                   <Text fontSize={[1]} color="darkGray" mt={2}>
                     {node.description}
                   </Text>
@@ -70,18 +83,6 @@ const PublicProjects = () => {
                           />
                         </Box>
                       ))}
-                    </Box>
-                    <Box>
-                      <Box display="flex" justifyContent="flex-end" mt={[1, 2]}>
-                        <Text ml={2}>
-                          <span role="img">&#11088;</span> Stars:{" "}
-                          {node.stargazers.totalCount}
-                        </Text>
-                        <Text ml={2}>
-                          <span role="img">👀</span> Watchers:{" "}
-                          {node.watchers.totalCount}
-                        </Text>
-                      </Box>
                     </Box>
                   </Box>
                 </Box>

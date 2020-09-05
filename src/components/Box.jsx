@@ -21,7 +21,7 @@ const Box = styled.div`
   ${color}
   ${position}
   ${typography}
-  ${shadow}  
+  ${shadow}
 `;
 
 export default styled(Box)(

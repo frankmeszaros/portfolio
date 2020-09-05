@@ -35,7 +35,7 @@ const Contact = () => (
         href={`mailto:${EMAIL}`}
         target="blank"
       >
-        Get in touch
+        Email me
       </Button>
     </Box>
   </Box>
