@@ -52,7 +52,9 @@ const Experience = () => {
               <Box my={3}>
                 {role.responsibilites.map((responsibility) => (
                   <Box key={responsibility} display="flex">
-                    <Box mr={2}>➡️</Box>
+                    <Box mr={2}>
+                      <span role="img">➡️</span>
+                    </Box>
                     <Box>{responsibility}</Box>
                   </Box>
                 ))}
