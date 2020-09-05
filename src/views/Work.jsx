@@ -57,12 +57,16 @@ const PublicProjects = () => {
                   <Box>
                     <Box display="flex" justifyContent="flex-start" mt={[1, 2]}>
                       <Text>
-                        <span role="img">&#11088;</span> Stars:{" "}
-                        {node.stargazers.totalCount}
+                        <span role="img" aria-label="stargazers">
+                          &#11088;
+                        </span>{" "}
+                        Stars: {node.stargazers.totalCount}
                       </Text>
                       <Text ml={2}>
-                        <span role="img">👀</span> Watchers:{" "}
-                        {node.watchers.totalCount}
+                        <span role="img" aria-label="watchers">
+                          👀
+                        </span>{" "}
+                        Watchers: {node.watchers.totalCount}
                       </Text>
                     </Box>
                   </Box>

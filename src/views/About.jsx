@@ -21,7 +21,7 @@ const About = () => (
       <Text fontSize={[4, 5, 6]}>About</Text>
       <Box display="flex" justifyContent="center">
         <Box width="20vw">
-          <img src={Me} width="100%" />
+          <img src={Me} width="100%" alt="frank" />
         </Box>
       </Box>
 
@@ -48,7 +48,7 @@ const About = () => (
     <Box display="flex" justifyContent="center">
       <Box
         display="grid"
-        gridTemplateColumns={["1fr", "1fr 1fr", , "1fr 1fr 1fr"]}
+        gridTemplateColumns={["1fr", "1fr 1fr", "1fr 1fr 1fr"]}
       >
         <Aws fontSize={ICON_SIZE} mx={[1, 2, 3]} />
         <Django fontSize={ICON_SIZE} mx={[1, 2, 3]} />
