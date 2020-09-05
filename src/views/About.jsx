@@ -32,7 +32,10 @@ const About = () => (
 
       <Box my={4}>
         <Text>Recently, I&apos;ve been working with:</Text>
-        <Box display="flex" justifyContent="space-between" my={3} px={6}>
+        <Box
+          display="grid"
+          gridTemplateColumns={["1fr", "1fr 1fr", , "1fr 1fr 1fr"]}
+        >
           <Aws fontSize={ICON_SIZE} />
           <Django fontSize={ICON_SIZE} />
           <Express fontSize={ICON_SIZE} />

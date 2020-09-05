@@ -20,14 +20,14 @@ const Button = styled(Link)`
 `;
 
 const Contact = () => (
-  <Box id="contact" p={[3, 4, 5]} minHeight="75vh" px={8}>
+  <Box id="contact" p={[3, 4, 5]} minHeight="75vh" px={[2, 4, 6]}>
     <Text fontSize={[4, 5, 6]}>Let&apos;s get in touch</Text>
     <Text fontSize={[2, 3, 4]}>
       I&apos;m currently not exploring new opportunities, but I&apos;m always
       happy to get in touch via email. I&apos;ll try to get back to you as soon
       as I can!
     </Text>
-    <Box display="flex" justifyContent="center">
+    <Box display="flex" justifyContent="center" mt={4}>
       <Button
         color="white"
         backgroundColor="black"

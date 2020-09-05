@@ -15,13 +15,13 @@ const Experience = () => {
   };
 
   return (
-    <Box id="experience" pl={[4, 5, 6, 7]} pr={[4, 5, 6, 7]} minHeight="90vh">
+    <Box id="experience" px={[1, 2, 3]} minHeight="90vh">
       <Text fontSize={[4, 5, 6]} textAlign="center">
         Experience
       </Text>
 
       <Box display="flex">
-        <Box minWidth="150px">
+        <Box minWidth={["50px", "150px"]}>
           <Selector
             items={workExperience}
             handleSelect={handleSelect}
@@ -40,10 +40,16 @@ const Experience = () => {
               maxWidth="50vw"
             >
               <Box display="flex" justifyContent="space-between">
-                <Text fontWeight="bold" fontSize={[3, 4]}>
+                <Text fontWeight="bold" fontSize={[2, 3, 4]}>
                   {role.title}
                 </Text>
-                <Text my={2} mx={2} color="darkGray" fontWeight="semibold">
+                <Text
+                  my={2}
+                  mx={2}
+                  color="darkGray"
+                  fontWeight="semibold"
+                  fontSize={[1, 2, 3]}
+                >
                   {role.from} - {role.to ? role.to : "Present"}
                 </Text>
               </Box>
@@ -59,14 +65,14 @@ const Experience = () => {
               </Box>
               <Box mt={2}>
                 <Text fontWeight="bold">Technologies I worked with</Text>
-                <Box display="flex">
+                <Box display="flex" width="100%" flexWrap="wrap">
                   {role.technologies.map((tech) => (
                     <Badge
                       px={3}
                       py={1}
                       key={`${role.title}-${tech}`}
                       label={tech}
-                      mr={2}
+                      m={1}
                     />
                   ))}
                 </Box>
