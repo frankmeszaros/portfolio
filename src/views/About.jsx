@@ -26,9 +26,10 @@ const About = () => (
       </Box>
 
       <Text fontSize={[1, 2, 3]} p={[1, 2]}>
-        Hey, I&apos;m Frank! I am a software (currently) based out of Ohio. I
-        love working with new technologies and frameworks to create performant
-        data-driven applications that provide a rich user experience.
+        Hey, I&apos;m Frank! I am a fullstack software engineer (currently)
+        based out of Ohio. I love working with new technologies and frameworks
+        to create performant data-driven applications that provide a rich user
+        experience.
       </Text>
 
       <Text mt={2} fontSize={[1, 2, 3]} p={[1, 2]}>
